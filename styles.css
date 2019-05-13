@@ -5,7 +5,7 @@
 body {
     text-align: center;
     margin: 0 auto;
-    padding: 20px;
+    padding: 50px;
     background-color: rgb(78, 50, 104);
     color: #ccc;
     font-family: Arial, sans-serif;
@@ -14,11 +14,13 @@ body {
 .button {
     text-decoration: none;
     color: #ccc;
-    font-size: 36px;
+    font-size: 26px;
     padding: 5px;
+    letter-spacing: 3px;
 }
 
 .stopwatch {
-    font-size: 32px;
+    font-size: 40px;
     padding: 10px;
+    letter-spacing: 4px;
 }

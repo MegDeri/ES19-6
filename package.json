@@ -1,0 +1,29 @@
+{
+  "name": "es19-6",
+  "version": "1.0.0",
+  "description": "ES6 Stoper",
+  "main": "script.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "babel script.js --watch --out-file script-compiled.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MegDeri/ES19-6.git"
+  },
+  "keywords": [
+    "babel",
+    "ES6",
+    "stoper"
+  ],
+  "author": "Magda",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MegDeri/ES19-6/issues"
+  },
+  "homepage": "https://github.com/MegDeri/ES19-6#readme",
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-latest": "^6.24.1"
+  }
+}

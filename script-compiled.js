@@ -33,6 +33,68 @@ var Stopwatch = function () {
         value: function format(times) {
             return pad0(times.minutes) + ':' + pad0(times.seconds) + ':' + pad0(Math.floor(times.miliseconds));
         }
+    }, {
+        key: 'start',
+        value: function start() {
+            var _this = this;
+
+            if (!this.running) {
+                this.running = true;
+                this.watch = setInterval(function () {
+                    return _this.step();
+                }, 10);
+            }
+        }
+    }, {
+        key: 'step',
+        value: function step() {
+            if (!this.running) return;
+            this.calculate();
+            this.print();
+        }
+    }, {
+        key: 'calculate',
+        value: function calculate() {
+            this.times.miliseconds += 1;
+            if (this.times.miliseconds >= 100) {
+                this.times.seconds += 1;
+                this.times.miliseconds = 0;
+            }
+            if (this.times.seconds >= 60) {
+                this.times.minutes += 1;
+                this.times.seconds = 0;
+            }
+        }
+    }, {
+        key: 'stop',
+        value: function stop() {
+            this.running = false;
+            clearInterval(this.watch);
+        }
+    }, {
+        key: 'resetClock',
+        value: function resetClock() {
+            this.reset();
+            this.print();
+        }
+    }, {
+        key: 'addResult',
+        value: function addResult() {
+            var addLi = document.querySelector('.results');
+            var pushTextLi = document.createElement('li');
+            if (this.times !== 0) {
+                pushTextLi.innerHTML = '' + this.format(this.times);
+                addLi.appendChild(pushTextLi);
+            }
+        }
+    }, {
+        key: 'resetResult',
+        value: function resetResult() {
+            var resetLi = document.querySelector('.results');
+            while (resetLi.firstChild) {
+                resetLi.firstChild.remove();
+            }
+        }
     }]);
 
     return Stopwatch;
@@ -56,4 +118,19 @@ startButton.addEventListener('click', function () {
 var stopButton = document.getElementById('stop');
 stopButton.addEventListener('click', function () {
     return stopwatch.stop();
+});
+
+var resetButton = document.getElementById('reset');
+resetButton.addEventListener('click', function () {
+    return stopwatch.resetClock();
+});
+
+var addResultButton = document.getElementById('add-result');
+addResultButton.addEventListener('click', function () {
+    return stopwatch.addResult();
+});
+
+var resetResultButton = document.getElementById('reset-results');
+resetResultButton.addEventListener('click', function () {
+    return stopwatch.resetResult();
 });

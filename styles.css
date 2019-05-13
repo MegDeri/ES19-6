@@ -6,21 +6,37 @@ body {
     text-align: center;
     margin: 0 auto;
     padding: 50px;
-    background-color: rgb(78, 50, 104);
     color: #ccc;
+    background-color: rgb(78, 50, 104);
     font-family: Arial, sans-serif;
 }
 
 .button {
     text-decoration: none;
-    color: #ccc;
     font-size: 26px;
     padding: 5px;
     letter-spacing: 3px;
+    color: #fff;
 }
 
 .stopwatch {
     font-size: 40px;
-    padding: 10px;
+    padding: 40px;
     letter-spacing: 4px;
+}
+
+.board {
+    text-decoration: none;
+    color: #fff;
+    font-size: 18px;
+    min-width: 150px;
+    display: inline-block;
+    padding: 10px;
+    letter-spacing: 3px;
+    border: 1px solid #ccc;
+}
+
+ul {
+    list-style-type: none;
+    color: #ccc;
 }

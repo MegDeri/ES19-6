@@ -85,17 +85,17 @@ function pad0(value) {
 const stopwatch = new Stopwatch(
 document.querySelector('.stopwatch'));
 
-let startButton = document.getElementById('start');
+const startButton = document.getElementById('start');
 startButton.addEventListener('click', () => stopwatch.start());
 
-let stopButton = document.getElementById('stop');
+const stopButton = document.getElementById('stop');
 stopButton.addEventListener('click', () => stopwatch.stop());
 
-let resetButton = document.getElementById('reset');
+const resetButton = document.getElementById('reset');
 resetButton.addEventListener('click', () => stopwatch.resetClock());
 
-let addResultButton = document.getElementById('add-result');
+const addResultButton = document.getElementById('add-result');
 addResultButton.addEventListener('click', () => stopwatch.addResult());
 
-let resetResultButton = document.getElementById('reset-results');
+const resetResultButton = document.getElementById('reset-results');
 resetResultButton.addEventListener('click', () => stopwatch.resetResult());
